@@ -2,17 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Devlix WM</title>
+  <title>Devlix WM - 📚 Wiki</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/LIGMATV/docsify-theme-github/github.css"></head>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
+</head>
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: 'Devlix WM',
-      repo: 'https://github.com/Mohamed1242012/devlix.git'
+      name: 'Devlix WM - 📚 Wiki',
+      repo: 'https://github.com/Mohamed1242012/devlix.git',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      coverpage: true,
+      plugins: [
+        EditOnGithubPlugin.create('https://github.com/Mohamed1242012/devlix-wiki/tree/main/docs/', null, '📝 Edit on GitHub')
+      ]
     }
   </script>
   <!-- Docsify v4 -->
