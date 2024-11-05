@@ -1,2 +1,16 @@
-* Getting Started
-  <!-- * [What is Devlix](README.md) -->
+- Getting Started
+  - [Installation](install_guid/installation.md)
+    - [Prerequisites](install_guid/installation.md#prerequisites)
+    - [Manual Install](install_guid/installation.md#manual-installation)
+      - [Install Dependencies](install_guid/installation.md#install-the-needed-packages-and-programs-for-building-dwm-dmenu-and-install-the-apps-you-need)
+      - [Install yay](install_guid/installation.md#install-yay-aur-helper)
+      - [Install Dependencies from the AUR](install_guid/installation.md#install-some-packages-from-the-aur)
+      - [Clone the repository](install_guid/installation.md#clone-my-repository-in-your-home-directory)
+      - [Set terminal color scheme](install_guid/installation.md#set-the-terminal-color-based-on-a-background-image)
+      - [Compiling](install_guid/installation.md#compile-dwm-dmenu-and-dwmblocks)
+      - [Moving Configurations](install_guid/installation.md#put-configuration-files-in-there-place)
+      - [Change the default shell to zsh](install_guid/installation.md#set-zsh-as-the-default-shell)
+      - [Oh My Zsh](install_guid/installation.md#install-oh-my-zsh-and-set-it-as-the-default-shell)
+      - [zsh Plugins](install_guid/installation.md#install-some-useful-zsh-plugins)
+      - [Powerlevel10k](install_guid/installation.md#install-powerlevel10k-theme-on-zsh)
+      - [Congrats 🎉](install_guid/installation.md#congrats-🎉)

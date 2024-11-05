@@ -9,5 +9,5 @@
 - Efficient
 
 [GitHub](https://github.com/Mohamed1242012/devlix.git)
-[Get Started](#)
+[Get Started](#what-is-devlix)
 
