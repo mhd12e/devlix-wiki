@@ -20,52 +20,66 @@ sudo pacman -Syu alacritty xorg-server xorg-xinit xorg-xsetroot xorg-xrandr feh 
 
 List of packages needed and there uses1:
 
-- alacritty: The terminal emulator we will use
-- xorg-server: For dwm to start with the x server
-- xorg-xinit: For the .xinitrc file
-- xorg-xsetroot: For setting the curser appearance and background color
-- xorg-xrandr: For tweeking monitors (brightness , resolution etc.)
-- feh: For the setting an image as a background
-- picom: A compositor that adds transparency and some effects in opening and closing windows
+- `alacritty`: The terminal emulator we will use
+- `xorg-server`: For dwm to start with the x server
+- `xorg-xinit`: For the .xinitrc file
+- `xorg-xsetroot`: For setting the curser appearance and background color
+- `xorg-xrandr`: For tweeking monitors (brightness , resolution etc.)
+- `feh`: For the setting an image as a background
+- `picom`: A compositor that adds transparency and some effects in opening and closing windows
 
-?> picom also helps in reducing screen tearing
+?> `picom` also helps in reducing screen tearing
 
-- python-pywal: Sets terminal color schemes based on an image
-- neofetch: For displaying your system information in a nice way
-- lf: A file manager that runs in the terminal
-- ueberzug: Adds image support to lf
-- ffmpegthumbnailer: A requirement for `ueberzug`
-- imagemagick: A requirement for `ueberzug`
-- poppler: A requirement for `ueberzug`
-- base-devel: For compiling the code
-- git: For git cloning
-- bat: like cat but with syntax highlighting and line numbers
-- chafa: A requirement for `ueberzug`
-- unzip: For unzipping `.zip` files
-- p7zip: For `.7z` files
-- unrar: for `.rar` files
-- catdoc: A requirement for `ueberzug`
-- docx2txt: A requirement for `ueberzug`
-- odt2txt: A requirement for `ueberzug`
-- gnumeric: A requirement for `ueberzug`
-- zsh: The shell we will use
-- vim: A code editor that only pros use
-- go: A programming language
-- webkit2gtk: `dwm` wont compile without it
-- libxft: `dwm` wont compile without it
-- libxinerama: `dwm` wont compile without it
-- libx11: `dwm` wont compile without it
-- ttf-jetbrains-mono-nerd: For the symbols you will use in `dwm`
-- alsa-utils: For controlling sound level
-- scrot: For taking screen shots
-- python3: For running python scripts
-- networkmanager: For connecting to the internet
-- curl: One of the ways to install `Oh My Zsh`
-- wget: One of the ways to install `Oh My Zsh`
-- fetch: One of the ways to install `Oh My Zsh`
+- `python-pywal`: Sets terminal color schemes based on an image
+- `neofetch`: For displaying your system information in a nice way
+- `lf`: A file manager that runs in the terminal
+- `ueberzug`: Adds image support to lf
+- `ffmpegthumbnailer`: A requirement for `lfimg`
+- `imagemagick`: A requirement for `lfimg`
+- `poppler`: A requirement for `lfimg`
+- `base-devel`: For compiling the code
+- `git`: For git cloning
+- `bat`: like cat but with syntax highlighting and line numbers
+- `chafa`: A requirement for `lfimg`
+- `unzip`: For unzipping `.zip` files
+- `p7zip`: For `.7z` files
+- `unrar`: for `.rar` files
+- `catdoc`: A requirement for `lfimg`
+- `docx2txt`: A requirement for `lfimg`
+- `odt2txt`: A requirement for `lfimg`
+- `gnumeric`: A requirement for `lfimg`
+- `zsh`: The shell we will use
+- `vim`: A code editor that only pros use
+- `go`: A programming language
+- `webkit2gtk`: `dwm` wont compile without it
+- `libxft`: `dwm` wont compile without it
+- `libxinerama`: `dwm` wont compile without it
+- `libx11`: `dwm` wont compile without it
+- `ttf-jetbrains-mono-nerd`: For the symbols you will use in `dwm`
+- `alsa-utils`: For controlling sound level
+- `scrot`: For taking screen shots
+- `python3`: For running python scripts
+- `networkmanager`: For connecting to the internet
+- `curl`: One of the ways to install `Oh My Zsh`
+- `wget`: One of the ways to install `Oh My Zsh`
+- `fetch`: One of the ways to install `Oh My Zsh`
 
 
 ### Install `yay` (AUR helper)
+
+> The Arch User Repository (AUR) is a community-driven repository for Arch Linux users. It contains package descriptions (PKGBUILDs) that allow you to compile a package from source with makepkg and then install it via pacman. The AUR was created to organize and share new packages from the community and to help expedite popular packages' inclusion into the extra repository. This document explains how users can access and utilize the AUR.
+> 
+> \- [Arch wiki - aur](https://wiki.archlinux.org/title/Arch_User_Repository)
+
+To make installing packages from the AUR easier we install an AUR helper.
+
+There are 2 main AUR helpers
+- [`yay`](https://github.com/Jguer/yay)
+- [`paru`](https://github.com/Morganamilo/paru)
+
+But in this guid I will use the most papular one `yay`
+
+Use these commands to install and compile `yay`
 
 ```bash
 git clone https://aur.archlinux.org/yay.git
@@ -79,17 +93,31 @@ makepkg -si
 yay -Syu epub-thumbnailer-git wkhtmltopdf-static 7-zip
 ```
 
-### Clone my repository in your Home directory
+This is a list a packages and there uses
+
+- epub-thumbnailer-git: A requirement for `lfimg`
+- wkhtmltopdf-static: A requirement for `lfimg`
+- 7-zip: For `.7z` files
+
+### Clone Devlix repository in your Home directory
+
+>What is Devlix
+>Devlix is a window manager based on dwm 6.4, designed to provide a lightweight, efficient, and customizable environment for users who prefer minimalism and simplicity in their computing experience. Built with performance in mind, Devlix focuses on delivering a streamlined user interface that enhances productivity while utilizing minimal system resources. Unlike dwm, which often requires extensive configuration and patching, Devlix is ready to use out of the box, allowing users to quickly set up and start working without the need for extensive customization.
+>
+> \- [What is Devlix - Devlix Wiki 📚](../README.md#what-is-devlix)
 
 ```bash
+cd ~
 git clone https://github.com/Mohamed1242012/devlix.git
 ```
 
-?> This is my repository that has all the apps and configs
+### Set the terminal color based on a background image using `Pywal`
 
-### Set the terminal color based on a background image
+> Pywal is a tool that generates a color palette from the dominant colors in an image. It then applies the colors system-wide and on-the-fly in all of your favourite programs.
+>
+> [Pywal README.md on GitHub](https://github.com/dylanaraps/pywal?tab=readme-ov-file)
 
-We have added some good looking wallpapers in our repository in this directory `devlix/wallpapers/[img name]` but you can put also any other wallpaper in any directory.
+We have added some good looking wallpapers in our repository in this directory `~/devlix/wallpapers/[img name]` but you can put also any other wallpaper in any directory.
 
 #### These are the wallpapers included
 
@@ -98,11 +126,14 @@ We have added some good looking wallpapers in our repository in this directory `
 | ![wall3](../wallpapers/wall3.png ':size=500') | ![wall2](../wallpapers/wall4.png ':size=500') |
 | ![wall5](../wallpapers/wall5.jpg ':size=500') |                                               |
 
-#### Use this command to set the terminal color scheems
+#### Use these commands to set the terminal color schemes
 
 ```bash
+rm -r ~/.cache/wal
 wal -i [ img path ]
 ```
+
+?> For more information about this tool (pywal) read there [wiki](https://github.com/dylanaraps/pywal/wiki)
 
 Replace `[ img path ]` with you real image path.
 
@@ -113,25 +144,31 @@ Replace `[ img path ]` with you real image path.
 wal -i ~/devlix/wallpapers/wall2.png
 ```
 
-### Compile dwm, dmenu and dwmblocks
+### Compile `dwm`, `dmenu`, `dwmblocks` and `lfimg`
 
 ```bash
+# Compile dwm - Dynamic Window Manager
 cd ~/devlix/dwm
 sudo make clean install
 
+# Compile dmenu
 cd ~/devlix/dmenu
 sudo make clean install
 
+# Compile dwmblocks
 cd ~/devlix/dwmblocks
 sudo make clean install
 
+# Compile lfimg
 cd ~/devlix/lfimg
 make install
 ```
 
 ### Put configuration files in there place
 
-```
+Copy these configuration files in the desired directories using these commands
+
+```bash
 cp ~/devlix/.zshrc ~/.zshrc
 cp ~/devlix/.zprofile ~/.zprofile
 cp ~/devlix/.xinitrc ~/.xinitrc
@@ -143,6 +180,10 @@ cp -r ~/devlix/configs/* ~/.config
 (Coming Soon)
 
 ### Set zsh as the default shell
+
+> The Z shell (Zsh) is a Unix shell that can be used as an interactive login shell and as a command interpreter for shell scripting. Zsh is an extended Bourne shell with many improvements, including some features of Bash, ksh, and tcsh.
+> 
+> [Z shell - Wikipedia](https://en.wikipedia.org/wiki/Z_shell)
 
 ```bash
 chsh -s /usr/bin/zsh
