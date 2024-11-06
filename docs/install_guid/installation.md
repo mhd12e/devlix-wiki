@@ -8,15 +8,62 @@
 
 ?> I will assume this is a new minimal Arch Linux installation
 
-!> If you want to run Devlix on a Virtual Machine ensure that 3d acceleration is turned on
+!> If you want to run Devlix on a Virtual Machine ensure that 3d acceleration is turned on, without it the Virtual Machine will freeze every time you open it
 
 ## Manual Installation
 
 ### Install the needed packages and programs for building dwm, dmenu, and install the apps you need
 
 ```bash
-sudo pacman -Syu alacritty xorg-server xorg-xinit xorg-xsetroot xorg-xrandr feh picom python-pywal neofetch lf ueberzug ffmpegthumbnailer imagemagick poppler base-devel git bat chafa unzip p7zip unrar catdoc docx2txt odt2txt gnumeric zsh vim go webkit2gtk libxft libxinerama libx11 ttf-jetbrains-mono-nerd alsa-utils scrot python3 networkmanager curl wget
+sudo pacman -Syu alacritty xorg-server xorg-xinit xorg-xsetroot xorg-xrandr feh picom python-pywal neofetch lf ueberzug ffmpegthumbnailer imagemagick poppler base-devel git bat chafa unzip p7zip unrar catdoc docx2txt odt2txt gnumeric zsh vim go webkit2gtk libxft libxinerama libx11 ttf-jetbrains-mono-nerd alsa-utils scrot python3 networkmanager curl wget fetch
 ```
+
+List of packages needed and there uses1:
+
+- alacritty: The terminal emulator we will use
+- xorg-server: For dwm to start with the x server
+- xorg-xinit: For the .xinitrc file
+- xorg-xsetroot: For setting the curser appearance and background color
+- xorg-xrandr: For tweeking monitors (brightness , resolution etc.)
+- feh: For the setting an image as a background
+- picom: A compositor that adds transparency and some effects in opening and closing windows
+
+?> picom also helps in reducing screen tearing
+
+- python-pywal: Sets terminal color schemes based on an image
+- neofetch: For displaying your system information in a nice way
+- lf: A file manager that runs in the terminal
+- ueberzug: Adds image support to lf
+- ffmpegthumbnailer: A requirement for `ueberzug`
+- imagemagick: A requirement for `ueberzug`
+- poppler: A requirement for `ueberzug`
+- base-devel: For compiling the code
+- git: For git cloning
+- bat: like cat but with syntax highlighting and line numbers
+- chafa: A requirement for `ueberzug`
+- unzip: For unzipping `.zip` files
+- p7zip: For `.7z` files
+- unrar: for `.rar` files
+- catdoc: A requirement for `ueberzug`
+- docx2txt: A requirement for `ueberzug`
+- odt2txt: A requirement for `ueberzug`
+- gnumeric: A requirement for `ueberzug`
+- zsh: The shell we will use
+- vim: A code editor that only pros use
+- go: A programming language
+- webkit2gtk: `dwm` wont compile without it
+- libxft: `dwm` wont compile without it
+- libxinerama: `dwm` wont compile without it
+- libx11: `dwm` wont compile without it
+- ttf-jetbrains-mono-nerd: For the symbols you will use in `dwm`
+- alsa-utils: For controlling sound level
+- scrot: For taking screen shots
+- python3: For running python scripts
+- networkmanager: For connecting to the internet
+- curl: One of the ways to install `Oh My Zsh`
+- wget: One of the ways to install `Oh My Zsh`
+- fetch: One of the ways to install `Oh My Zsh`
+
 
 ### Install `yay` (AUR helper)
 

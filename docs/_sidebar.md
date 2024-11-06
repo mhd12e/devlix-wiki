@@ -1,5 +1,5 @@
 - Getting Started
-  - [Installation](install_guid/installation.md)
+  - [Installation](install_guid/installation.md#installation)
     - [Prerequisites](install_guid/installation.md#prerequisites)
     - [Manual Install](install_guid/installation.md#manual-installation)
       - [Install Dependencies](install_guid/installation.md#install-the-needed-packages-and-programs-for-building-dwm-dmenu-and-install-the-apps-you-need)
