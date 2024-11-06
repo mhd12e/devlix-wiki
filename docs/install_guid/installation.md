@@ -12,19 +12,19 @@
 
 ## Manual Installation
 
-### Install the needed packages and programs for building dwm, dmenu, and install the apps you need
+### Install the needed packages and programs for building `dwm`, `dmenu`, and install the apps you need
 
 ```bash
-sudo pacman -Syu alacritty xorg-server xorg-xinit xorg-xsetroot xorg-xrandr feh picom python-pywal neofetch lf ueberzug ffmpegthumbnailer imagemagick poppler base-devel git bat chafa unzip p7zip unrar catdoc docx2txt odt2txt gnumeric zsh vim go webkit2gtk libxft libxinerama libx11 ttf-jetbrains-mono-nerd alsa-utils scrot python3 networkmanager curl wget fetch
+sudo pacman -Syu alacritty xorg-server xorg-xinit xorg-xsetroot xorg-xrandr feh picom python-pywal neofetch lf ueberzug ffmpegthumbnailer imagemagick poppler base-devel git bat chafa unzip p7zip unrar catdoc docx2txt odt2txt gnumeric zsh vim go webkit2gtk libxft libxinerama libx11 ttf-jetbrains-mono-nerd alsa-utils scrot python3 networkmanager curl wget
 ```
 
-List of packages needed and there uses1:
+List of packages needed and there uses:
 
 - `alacritty`: The terminal emulator we will use
-- `xorg-server`: For dwm to start with the x server
-- `xorg-xinit`: For the .xinitrc file
+- `xorg-server`: For dwm to start with the `X Window System`
+- `xorg-xinit`: For the `.xinitrc` file
 - `xorg-xsetroot`: For setting the curser appearance and background color
-- `xorg-xrandr`: For tweeking monitors (brightness , resolution etc.)
+- `xorg-xrandr`: For tweaking monitors (brightness , resolution etc.)
 - `feh`: For the setting an image as a background
 - `picom`: A compositor that adds transparency and some effects in opening and closing windows
 
@@ -57,12 +57,11 @@ List of packages needed and there uses1:
 - `libx11`: `dwm` wont compile without it
 - `ttf-jetbrains-mono-nerd`: For the symbols you will use in `dwm`
 - `alsa-utils`: For controlling sound level
-- `scrot`: For taking screen shots
+- `scrot`: For taking screenshots
 - `python3`: For running python scripts
 - `networkmanager`: For connecting to the internet
 - `curl`: One of the ways to install `Oh My Zsh`
 - `wget`: One of the ways to install `Oh My Zsh`
-- `fetch`: One of the ways to install `Oh My Zsh`
 
 
 ### Install `yay` (AUR helper)
@@ -95,14 +94,14 @@ yay -Syu epub-thumbnailer-git wkhtmltopdf-static 7-zip
 
 This is a list a packages and there uses
 
-- epub-thumbnailer-git: A requirement for `lfimg`
-- wkhtmltopdf-static: A requirement for `lfimg`
-- 7-zip: For `.7z` files
+- `epub-thumbnailer-git`: A requirement for `lfimg`
+- `wkhtmltopdf-static`: A requirement for `lfimg`
+- `7-zip`: For `.7z` files
 
 ### Clone Devlix repository in your Home directory
 
 >What is Devlix
->Devlix is a window manager based on dwm 6.4, designed to provide a lightweight, efficient, and customizable environment for users who prefer minimalism and simplicity in their computing experience. Built with performance in mind, Devlix focuses on delivering a streamlined user interface that enhances productivity while utilizing minimal system resources. Unlike dwm, which often requires extensive configuration and patching, Devlix is ready to use out of the box, allowing users to quickly set up and start working without the need for extensive customization.
+>Devlix is a window manager based on `dwm 6.4`, designed to provide a lightweight, efficient, and customizable environment for users who prefer minimalism and simplicity in their computing experience. Built with performance in mind, Devlix focuses on delivering a streamlined user interface that enhances productivity while utilizing minimal system resources. Unlike `dwm`, which often requires extensive configuration and patching, Devlix is ready to use out of the box, allowing users to quickly set up and start working without the need for extensive customization.
 >
 > \- [What is Devlix - Devlix Wiki 📚](../README.md#what-is-devlix)
 
@@ -113,9 +112,9 @@ git clone https://github.com/Mohamed1242012/devlix.git
 
 ### Set the terminal color based on a background image using `Pywal`
 
-> Pywal is a tool that generates a color palette from the dominant colors in an image. It then applies the colors system-wide and on-the-fly in all of your favourite programs.
+> `Pywal` is a tool that generates a color palette from the dominant colors in an image. It then applies the colors system-wide and on-the-fly in all of your favorite programs.
 >
-> [Pywal README.md on GitHub](https://github.com/dylanaraps/pywal?tab=readme-ov-file)
+> [`Pywal` `README.md` on GitHub](https://github.com/dylanaraps/pywal?tab=readme-ov-file)
 
 We have added some good looking wallpapers in our repository in this directory `~/devlix/wallpapers/[img name]` but you can put also any other wallpaper in any directory.
 
@@ -133,7 +132,7 @@ rm -r ~/.cache/wal
 wal -i [ img path ]
 ```
 
-?> For more information about this tool (pywal) read there [wiki](https://github.com/dylanaraps/pywal/wiki)
+?> For more information about this tool (`pywal`) read there [wiki](https://github.com/dylanaraps/pywal/wiki)
 
 Replace `[ img path ]` with you real image path.
 
@@ -145,6 +144,8 @@ wal -i ~/devlix/wallpapers/wall2.png
 ```
 
 ### Compile `dwm`, `dmenu`, `dwmblocks` and `lfimg`
+
+Compile the code for these apps using these commands one by one
 
 ```bash
 # Compile dwm - Dynamic Window Manager
@@ -205,9 +206,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # Install Oh My Zsh using wget
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-
-# Install Oh My Zsh using fetch
-sh -c "$(fetch -o - https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ?> For more information read the official [Oh My Zsh documentation](https://github.com/ohmyzsh/ohmyzsh/wiki)
@@ -216,12 +214,12 @@ sh -c "$(fetch -o - https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 These plugins add some functionality to zsh and make it more efficient and easier to use, an example of this are these plugins.
 
-- zsh-autosuggestions
+- `zsh-autosuggestions`
     - This gives auto suggestions for the past commands you wrote and increases speed so you don't type any command again and again
-    - For more information about zsh-autosuggestions read it's [`README.md` file on GitHub](https://github.com/zsh-users/zsh-autosuggestions)
-- zsh-syntax-highlighting
+    - For more information about `zsh-autosuggestions` read it's [`README.md` file on GitHub](https://github.com/zsh-users/zsh-autosuggestions)
+- `zsh-syntax-highlighting`
     - This gives you syntax highlighting in the commands you type
-    - For more information about zsh-syntax-highlighting read it's [`README.md` file on GitHub](https://github.com/zsh-users/zsh-syntax-highlighting)
+    - For more information about `zsh-syntax-highlighting` read it's [`README.md` file on GitHub](https://github.com/zsh-users/zsh-syntax-highlighting)
 
 To install them enter these commands in your terminal
 
@@ -246,11 +244,11 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 >
 > \- [Powerlevel10k README.md on GitHub](https://github.com/romkatv/powerlevel10k)
 
-Powerlevel10k lets you customize the terminal to do somethings like this
+`Powerlevel10k` lets you customize the terminal to do somethings like this
 
 ![powerlevel10k](../pictures/powerlevel10k.png)
 
-To install Powerlevel10k run this command
+To install `Powerlevel10k` run this command
 
 ```bash
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
@@ -258,6 +256,6 @@ git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerl
 
 ### Congrats 🎉
 
-Now Logout and Login and you should be greeted with Devlix WM
+Now Logout and Login and you should be greeted with Devlix WM !
 
 ![screenshot](../screenshots/scrot2.png ':size=700')
