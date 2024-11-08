@@ -102,7 +102,7 @@ This is a list a packages and there uses
 ### Clone Devlix repository in your Home directory
 
 >What is Devlix
->Devlix is a window manager based on `dwm 6.4`, designed to provide a lightweight, efficient, and customizable environment for users who prefer minimalism and simplicity in their computing experience. Built with performance in mind, Devlix focuses on delivering a streamlined user interface that enhances productivity while utilizing minimal system resources. Unlike `dwm`, which often requires extensive configuration and patching, Devlix is ready to use out of the box, allowing users to quickly set up and start working without the need for extensive customization.
+>Devlix is a window manager based on `dwm 6.5`, designed to provide a lightweight, efficient, and customizable environment for users who prefer minimalism and simplicity in their computing experience. Built with performance in mind, Devlix focuses on delivering a streamlined user interface that enhances productivity while utilizing minimal system resources. Unlike `dwm`, which often requires extensive configuration and patching, Devlix is ready to use out of the box, allowing users to quickly set up and start working without the need for extensive customization.
 >
 > \- [What is Devlix - Devlix Wiki 📚](../README.md#what-is-devlix)
 
