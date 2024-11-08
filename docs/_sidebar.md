@@ -2,7 +2,7 @@
   - [Installation](install_guid/installation.md#installation)
     - [Prerequisites](install_guid/installation.md#prerequisites)
     - [Manual Install](install_guid/installation.md#manual-installation)
-      - [Install Dependencies](install_guid/installation.md#install-the-needed-packages-and-programs-for-building-dwm-dmenu-and-install-the-apps-you-need)
+      - [Install Dependencies](install_guid/installation.md#install-the-needed-packages-and-programs-for-building-dwm-dmenu-dwmblocks-and-install-the-apps-you-need)
       - [Install yay](install_guid/installation.md#install-yay-aur-helper)
       - [Install Dependencies from the AUR](install_guid/installation.md#install-some-packages-from-the-aur)
       - [Clone the repository](install_guid/installation.md#clone-devlix-repository-in-your-home-directory)

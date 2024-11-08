@@ -12,11 +12,12 @@
 
 ## Manual Installation
 
-### Install the needed packages and programs for building `dwm`, `dmenu`, and install the apps you need
+### Install the needed packages and programs for building `dwm`, `dmenu`, `dwmblocks` and install the apps you need
 
 ```bash
 sudo pacman -Syu alacritty xorg-server xorg-xinit xorg-xsetroot xorg-xrandr feh picom python-pywal neofetch lf ueberzug ffmpegthumbnailer imagemagick poppler base-devel git bat chafa unzip p7zip unrar catdoc docx2txt odt2txt gnumeric zsh vim go webkit2gtk libxft libxinerama libx11 ttf-jetbrains-mono-nerd alsa-utils scrot python3 networkmanager curl wget
 ```
+getting_familiar
 
 List of packages needed and there uses:
 
