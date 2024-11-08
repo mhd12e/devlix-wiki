@@ -1,4 +1,5 @@
 - Getting Started
+  - [What is Devlix](/?id=what-is-devlix)
   - [Installation](install_guid/installation.md#installation)
     - [Prerequisites](install_guid/installation.md#prerequisites)
     - [Manual Install](install_guid/installation.md#manual-installation)
