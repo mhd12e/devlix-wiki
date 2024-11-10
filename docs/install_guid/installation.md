@@ -6,7 +6,7 @@
 
 ## Prerequisites
 
-?> I will assume this is a new minimal Arch Linux installation
+?> I will assume this is a new minimal Arch Linux installation and you user can use sudo
 
 !> If you want to run Devlix on a Virtual Machine ensure that 3d acceleration is turned on, without it the Virtual Machine will freeze every time you open it
 
@@ -15,9 +15,8 @@
 ### Install the needed packages and programs for building `dwm`, `dmenu`, `dwmblocks` and install the apps you need
 
 ```bash
-sudo pacman -Syu alacritty xorg-server xorg-xinit xorg-xsetroot xorg-xrandr feh picom python-pywal neofetch lf ueberzug ffmpegthumbnailer imagemagick poppler base-devel git bat chafa unzip p7zip unrar catdoc docx2txt odt2txt gnumeric zsh vim go webkit2gtk libxft libxinerama libx11 ttf-jetbrains-mono-nerd alsa-utils scrot python3 networkmanager curl wget flameshot
+sudo pacman -Syu --noconfirm alacritty xorg-server xorg-xinit xorg-xsetroot xorg-xrandr feh picom python-pywal neofetch lf ueberzug ffmpegthumbnailer imagemagick poppler base-devel git bat chafa unzip p7zip unrar catdoc docx2txt odt2txt gnumeric zsh vim go webkit2gtk libxft libxinerama libx11 ttf-jetbrains-mono-nerd alsa-utils scrot python3 networkmanager curl wget flameshot
 ```
-getting_familiar
 
 List of packages needed and there uses:
 
@@ -63,6 +62,7 @@ List of packages needed and there uses:
 - `networkmanager`: For connecting to the internet
 - `curl`: One of the ways to install `Oh My Zsh`
 - `wget`: One of the ways to install `Oh My Zsh`
+- `flameshot`: Another tool for taking screenshots
 
 
 ### Install `yay` (AUR helper)
@@ -82,15 +82,16 @@ But in this guid I will use the most papular one `yay`
 Use these commands to install and compile `yay`
 
 ```bash
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+sudo rm -rf ~/yay
+git clone https://aur.archlinux.org/yay.git ~/yay
+(cd ~/yay && makepkg -si)
+sudo rm -rf ~/yay
 ```
 
 ### Install some packages from the AUR
 
 ```bash
-yay -Syu epub-thumbnailer-git wkhtmltopdf-static 7-zip
+yay -Syu --noconfirm epub-thumbnailer-git wkhtmltopdf-static 7-zip
 ```
 
 This is a list a packages and there uses
@@ -107,8 +108,8 @@ This is a list a packages and there uses
 > \- [What is Devlix - Devlix Wiki 📚](../README.md#what-is-devlix)
 
 ```bash
-cd ~
-git clone https://github.com/Mohamed1242012/devlix.git
+sudo rm -rf ~/devlix
+git clone https://github.com/Mohamed1242012/devlix.git ~/devlix
 ```
 
 ### Set the terminal color based on a background image using `Pywal`
@@ -129,7 +130,8 @@ We have added some good looking wallpapers in our repository in this directory `
 #### Use these commands to set the terminal color schemes
 
 ```bash
-rm -r ~/.cache/wal
+rm -rf ~/.cache/wal
+rm -rf ~/.config/wal
 wal -i [ img path ]
 ```
 
@@ -141,6 +143,7 @@ Replace `[ img path ]` with you real image path.
 #### Example
 
 ```bash
+rm -r ~/.cache/wal
 wal -i ~/devlix/wallpapers/wall2.png
 ```
 
@@ -150,20 +153,16 @@ Compile the code for these apps using these commands one by one
 
 ```bash
 # Compile dwm - Dynamic Window Manager
-cd ~/devlix/dwm
-sudo make clean install
+(cd ~/devlix/dwm && sudo make clean install)
 
 # Compile dmenu
-cd ~/devlix/dmenu
-sudo make clean install
+(cd ~/devlix/dmenu && sudo make clean install)
 
 # Compile dwmblocks
-cd ~/devlix/dwmblocks
-sudo make clean install
+(cd ~/devlix/dwmblocks && sudo make clean install)
 
 # Compile lfimg
-cd ~/devlix/lfimg
-make install
+(cd ~/devlix/lfimg && make install)
 ```
 
 ### Put configuration files in there place
@@ -238,6 +237,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugi
 # zsh-syntax-highlighting - https://github.com/zsh-users/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 ```
+
+<!-- zsh -i -c 'echo $ZSH_VERSION' -->
+
 
 ### Install `Powerlevel10k` theme on `zsh`
 
