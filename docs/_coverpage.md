@@ -1,4 +1,5 @@
-<!-- ![logo](_media/icon.svg) -->
+![logo](logo.png ':size=50%')
+
 
 # Devlix WM <small>1.0</small>
 
