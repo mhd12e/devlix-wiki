@@ -15,7 +15,7 @@
 ### Install the needed packages and programs for building `dwm`, `dmenu`, `dwmblocks` and install the apps you need
 
 ```bash
-sudo pacman -Syu --noconfirm alacritty xorg-server xorg-xinit xorg-xsetroot xorg-xrandr feh picom python-pywal neofetch lf ueberzug ffmpegthumbnailer imagemagick poppler base-devel git bat chafa unzip p7zip unrar catdoc docx2txt odt2txt gnumeric zsh vim go webkit2gtk libxft libxinerama libx11 ttf-jetbrains-mono-nerd alsa-utils scrot python3 networkmanager curl wget flameshot
+sudo pacman -Syu --noconfirm alacritty xorg-server xorg-xinit xorg-xsetroot xorg-xrandr feh picom python-pywal neofetch lf ueberzug ffmpegthumbnailer imagemagick poppler base-devel git bat chafa unzip p7zip unrar catdoc docx2txt odt2txt gnumeric zsh go webkit2gtk libxft libxinerama libx11 ttf-jetbrains-mono-nerd alsa-utils scrot python3 networkmanager curl wget flameshot bluez-obex bluez bluez-utils blueman pulsemixer
 ```
 
 List of packages needed and there uses:
@@ -63,9 +63,16 @@ List of packages needed and there uses:
 - `curl`: One of the ways to install `Oh My Zsh`
 - `wget`: One of the ways to install `Oh My Zsh`
 - `flameshot`: Another tool for taking screenshots
+- `bluez-obex`: For bluetooth support
+- `bluez`: For bluetooth support
+- `bluez-utils`: For bluetooth support
+- `blueman`: For bluetooth support
+- `pulsemixer`: A tui tool for controlling sound
 
 
 ### Install `yay` (AUR helper)
+
+?> You can skip this part if `yay` is already installed on your system
 
 > The Arch User Repository (AUR) is a community-driven repository for Arch Linux users. It contains package descriptions (PKGBUILDs) that allow you to compile a package from source with makepkg and then install it via pacman. The AUR was created to organize and share new packages from the community and to help expedite popular packages' inclusion into the extra repository. This document explains how users can access and utilize the AUR.
 > 
@@ -77,21 +84,21 @@ There are 2 main AUR helpers
 - [`yay`](https://github.com/Jguer/yay)
 - [`paru`](https://github.com/Morganamilo/paru)
 
-But in this guid I will use the most papular one `yay`
+But in this guid I will use the most popular one `yay`
 
 Use these commands to install and compile `yay`
 
 ```bash
-sudo rm -rf ~/yay
 git clone https://aur.archlinux.org/yay.git ~/yay
-(cd ~/yay && makepkg -si)
+cd ~/yay
+makepkg -si
 sudo rm -rf ~/yay
 ```
 
 ### Install some packages from the AUR
 
 ```bash
-yay -Syu --noconfirm epub-thumbnailer-git wkhtmltopdf-static 7-zip
+yay -Syu epub-thumbnailer-git wkhtmltopdf-static 7-zip
 ```
 
 This is a list a packages and there uses
@@ -108,34 +115,27 @@ This is a list a packages and there uses
 > \- [What is Devlix - Devlix Wiki 📚](../README.md#what-is-devlix)
 
 ```bash
-sudo rm -rf ~/devlix
 git clone https://github.com/Mohamed1242012/devlix.git ~/devlix
 ```
 
-### Set the terminal color based on a background image using `Pywal`
+### Set the terminal color scheme and the background image using `Pywal`
 
 > `Pywal` is a tool that generates a color palette from the dominant colors in an image. It then applies the colors system-wide and on-the-fly in all of your favorite programs.
 >
-> [`Pywal` `README.md` on GitHub](https://github.com/dylanaraps/pywal?tab=readme-ov-file)
+> [`Pywal README.md` on GitHub](https://github.com/dylanaraps/pywal?tab=readme-ov-file)
 
 We have added some good looking wallpapers in our repository in this directory `~/devlix/wallpapers/[img name]` but you can put also any other wallpaper in any directory.
 
-#### These are the wallpapers included
-
-| ![wall1](../wallpapers/wall1.jpg ':size=500') | ![wall2](../wallpapers/wall2.png ':size=500') |
-|-----------------------------------------------|-----------------------------------------------|
-| ![wall3](../wallpapers/wall3.png ':size=500') | ![wall2](../wallpapers/wall4.png ':size=500') |
-| ![wall5](../wallpapers/wall5.jpg ':size=500') |                                               |
+?> See [wallpapers included on GitHub](https://github.com/Mohamed1242012/devlix/tree/main/wallpapers)
 
 #### Use these commands to set the terminal color schemes
 
 ```bash
-rm -rf ~/.cache/wal
-rm -rf ~/.config/wal
+rm -rf ~/.cache/wal ~/.config/wal
 wal -i [ img path ]
 ```
 
-?> For more information about this tool (`pywal`) read there [wiki](https://github.com/dylanaraps/pywal/wiki)
+?> For more information about this tool (`pywal`) read their [wiki](https://github.com/dylanaraps/pywal/wiki)
 
 Replace `[ img path ]` with you real image path.
 
@@ -143,8 +143,35 @@ Replace `[ img path ]` with you real image path.
 #### Example
 
 ```bash
-rm -r ~/.cache/wal
+rm -r ~/.cache/wal ~/.config/wal
 wal -i ~/devlix/wallpapers/wall2.png
+```
+
+### Copy `.config` directory to your system
+
+Copy all files in `~/devlix/configs` to your `~/.config` file by using this command
+
+```bash
+cp -r ~/devlix/configs/* ~/.config
+```
+
+### Export `pywal` colors to Alacritty
+
+> Alacritty is a modern terminal emulator that comes with sensible defaults, but allows for extensive configuration. By integrating with other applications, rather than reimplementing their functionality, it manages to provide a flexible set of features with high performance. The supported platforms currently consist of BSD, Linux, macOS and Windows.
+>
+> \- [Alacritty official website](https://alacritty.org/)
+
+?> For more information about Alacritty read their [documentation](https://github.com/alacritty/alacritty/blob/master/docs/features.md)
+
+To export `pywal` generated colors to alacritty use `pywal2alacritty`
+
+?> `pywal2alacritty` is an open source tool that exports the colors generated from `pywal` to Alacritty `.toml` file that has all the config, for more information about it read there [`README.md` file on GitHub](https://github.com/egeesin/pywal2alacritty?tab=readme-ov-file#pywal2alacritty)
+
+Use these commands to export the colors
+
+```bash
+cd ~/devlix/alacritty-color-export
+./script.sh
 ```
 
 ### Compile `dwm`, `dmenu`, `dwmblocks` and `lfimg`
@@ -153,16 +180,20 @@ Compile the code for these apps using these commands one by one
 
 ```bash
 # Compile dwm - Dynamic Window Manager
-(cd ~/devlix/dwm && sudo make clean install)
+cd ~/devlix/dwm
+sudo make clean install
 
 # Compile dmenu
-(cd ~/devlix/dmenu && sudo make clean install)
+cd ~/devlix/dmenu
+sudo make clean install
 
 # Compile dwmblocks
-(cd ~/devlix/dwmblocks && sudo make clean install)
+cd ~/devlix/dwmblocks
+sudo make clean install
 
 # Compile lfimg
-(cd ~/devlix/lfimg && make install)
+cd ~/devlix/lfimg
+make install
 ```
 
 ### Put configuration files in there place
@@ -174,7 +205,6 @@ cp ~/devlix/.zshrc ~/.zshrc
 cp ~/devlix/.zprofile ~/.zprofile
 cp ~/devlix/.xinitrc ~/.xinitrc
 cp ~/devlix/.p10k.zsh ~/.p10k.zsh
-cp -r ~/devlix/configs/* ~/.config
 ```
 
 #### References
@@ -198,14 +228,11 @@ chsh -s /usr/bin/zsh
 > 
 > \- [Oh My Zsh Official Website](https://ohmyz.sh)
 
-Use one of these commands to install `Oh My Zsh` and set it as the default shell.
+Use this command to install `Oh My Zsh` and set it as the default shell.
 
 ```bash
 # Install Oh My Zsh using curl
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# Install Oh My Zsh using wget
-sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 ```
 
 ?> For more information read the official [Oh My Zsh documentation](https://github.com/ohmyzsh/ohmyzsh/wiki)
