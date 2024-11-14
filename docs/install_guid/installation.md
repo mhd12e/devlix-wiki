@@ -15,7 +15,7 @@
 ### Install the needed packages and programs for building `dwm`, `dmenu`, `dwmblocks` and install the apps you need
 
 ```bash
-sudo pacman -Syu --noconfirm alacritty xorg-server xorg-xinit xorg-xsetroot xorg-xrandr feh picom python-pywal neofetch lf ueberzug ffmpegthumbnailer imagemagick poppler base-devel git bat chafa unzip p7zip unrar catdoc docx2txt odt2txt gnumeric zsh go webkit2gtk libxft libxinerama libx11 ttf-jetbrains-mono-nerd alsa-utils scrot python3 networkmanager curl wget flameshot bluez-obex bluez bluez-utils blueman pulsemixer
+sudo pacman -Syu --noconfirm alacritty xorg-server xorg-xinit xorg-xsetroot xorg-xrandr feh picom python-pywal neofetch lf ueberzug ffmpegthumbnailer imagemagick poppler base-devel git bat chafa unzip p7zip unrar catdoc docx2txt odt2txt gnumeric zsh go webkit2gtk libxft libxinerama libx11 ttf-jetbrains-mono-nerd alsa-utils scrot python3 networkmanager curl flameshot bluez-obex bluez bluez-utils blueman pulsemixer
 ```
 
 List of packages needed and there uses:
@@ -61,7 +61,6 @@ List of packages needed and there uses:
 - `python3`: For running python scripts
 - `networkmanager`: For connecting to the internet
 - `curl`: One of the ways to install `Oh My Zsh`
-- `wget`: One of the ways to install `Oh My Zsh`
 - `flameshot`: Another tool for taking screenshots
 - `bluez-obex`: For bluetooth support
 - `bluez`: For bluetooth support
@@ -98,7 +97,7 @@ sudo rm -rf ~/yay
 ### Install some packages from the AUR
 
 ```bash
-yay -Syu epub-thumbnailer-git wkhtmltopdf-static 7-zip
+yay -Syu --noconfirm epub-thumbnailer-git wkhtmltopdf-static 7-zip
 ```
 
 This is a list a packages and there uses
@@ -118,6 +117,14 @@ This is a list a packages and there uses
 git clone https://github.com/Mohamed1242012/devlix.git ~/devlix
 ```
 
+### Copy `.config` directory to your system
+
+Copy all files in `~/devlix/configs` to your `~/.config` file by using this command
+
+```bash
+cp -r ~/devlix/configs/* ~/.config
+```
+
 ### Set the terminal color scheme and the background image using `Pywal`
 
 > `Pywal` is a tool that generates a color palette from the dominant colors in an image. It then applies the colors system-wide and on-the-fly in all of your favorite programs.
@@ -131,7 +138,7 @@ We have added some good looking wallpapers in our repository in this directory `
 #### Use these commands to set the terminal color schemes
 
 ```bash
-rm -rf ~/.cache/wal ~/.config/wal
+rm -rf ~/.cache/wal
 wal -i [ img path ]
 ```
 
@@ -143,17 +150,10 @@ Replace `[ img path ]` with you real image path.
 #### Example
 
 ```bash
-rm -r ~/.cache/wal ~/.config/wal
+rm -r ~/.cache/wal
 wal -i ~/devlix/wallpapers/wall2.png
 ```
 
-### Copy `.config` directory to your system
-
-Copy all files in `~/devlix/configs` to your `~/.config` file by using this command
-
-```bash
-cp -r ~/devlix/configs/* ~/.config
-```
 
 ### Export `pywal` colors to Alacritty
 
@@ -179,6 +179,9 @@ cd ~/devlix/alacritty-color-export
 Compile the code for these apps using these commands one by one
 
 ```bash
+# Add your username
+sed -i "s/mohamed/$(whoami)/g" ~/devlix/dwm/config.def.h ~/devlix/dmenu/config.def.h
+
 # Compile dwm - Dynamic Window Manager
 cd ~/devlix/dwm
 sudo make clean install
