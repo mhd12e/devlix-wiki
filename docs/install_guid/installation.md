@@ -31,7 +31,23 @@ Clone our repository with this command
 git clone https://github.com/mohamed1242012/devlix.git
 ```
 
+
 ### Start the script
+
+Start the installer script using these commands
+
+```bash
+cd ~/devlix
+./install.sh
+```
+
+> Don't forget to type your password when the installer prompts you to
+
+When the installer asks you to choose a wallpaper, you can use the included wallpapers in our repository `~/devlix/wallpapers/[wallpaper]`.
+
+replace `[wallpaper]` with the wallpaper you want to set.
+
+see our [wallpapers in github](https://github.com/Mohamed1242012/devlix/tree/main/wallpapers).
 
 
 ## Manual Installation
