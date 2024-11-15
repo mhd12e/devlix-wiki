@@ -2,13 +2,37 @@
 
 > This will cover the installation process of Devlix and how to set it up.
 
-?> The installation guid is currently manual but there will be an installer script in the future
+You can install Devlix using the script or the manual way.
+
 
 ## Prerequisites
 
 ?> I will assume this is a new minimal Arch Linux installation and you user can use sudo
 
-!> If you want to run Devlix on a Virtual Machine ensure that 3d acceleration is turned on, without it the Virtual Machine will freeze every time you open it
+!> If you want to run Devlix wm on a Virtual Machine ensure that 3d acceleration is turned on, without it the Virtual Machine will freeze every time you open it
+
+## Install script
+
+These are the steps you need to follow to install Devlix wm with the installer script.
+
+### Install `git` for cloning my repository
+
+Install `git` on Arch Linux with this command
+
+```bash
+sudo pacman -Syu git
+```
+
+### Clone Devlix wm repository
+
+Clone our repository with this command
+
+```bash
+git clone https://github.com/mohamed1242012/devlix.git
+```
+
+### Start the script
+
 
 ## Manual Installation
 
